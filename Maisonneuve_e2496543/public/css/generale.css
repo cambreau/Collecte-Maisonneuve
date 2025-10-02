@@ -52,18 +52,3 @@ h3 {
     font-weight: var(--epaisseur-police-normale);
     line-height: var(--interligne-logo);
 }
-
-h1:hover {
-    color: var(--logo-bleu-clair);
-    font-weight: var(--epaisseur-police-tres-gras);
-}
-
-h2:hover {
-    color: var(--logo-bleu-moyen);
-    font-weight: var(--epaisseur-police-tres-gras);
-}
-
-h3:hover {
-    color: var(--logo-bleu-centre);
-    font-weight: var(--epaisseur-police-gras);
-}

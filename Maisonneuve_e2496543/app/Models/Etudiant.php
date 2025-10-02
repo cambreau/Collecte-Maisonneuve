@@ -23,7 +23,7 @@ class Etudiant extends Model
          */
         public function ville()
         {
-            return $this->belongsTo(Ville::class, 'ville');
+            return $this->belongsTo(Ville::class, 'ville', 'id');
         }
 }
 

@@ -16,13 +16,19 @@
         <h1>Zone Étudiante</h1>
         <nav class="navigation">
             <ul class="navigation__menu">
-                <li class="navigation__item"><a href="{{ route('etudiant.creer') }}">Créer un étudiant</a></li>
-                <li class="navigation__item"><a href="{{ url('/etudiants') }}">Liste Étudiants</a></li>
+                <li class="navigation__item"><a href="{{ route('etudiant.pageCreation') }}">Créer un étudiant</a></li>
+                <li class="navigation__item"><a href="{{ route('etudiant.listeEtuidants') }}">Liste Étudiants</a></li>
             </ul>
         </nav>
     </header>
 
     <main class="site-main container">
+        @if(session('succes'))
+            <div class="succes" role="alert">
+                 {{ session('succes')}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
         @yield('content')
     </main>
 

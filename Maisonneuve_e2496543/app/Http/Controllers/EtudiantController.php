@@ -15,8 +15,8 @@ class EtudiantController extends Controller
     {
         // SELECT * FROM etudiants;
         $etudiants = Etudiant::with('ville')->get();
-
-        return view('etudiant.listeEtudiant', ['etudiants' => $etudiants]);
+        $villes = Ville::all(); 
+        return view('etudiant.listeEtudiant', ['etudiants' => $etudiants, 'villes'=> $villes]);
     }
 
     /**
@@ -31,7 +31,7 @@ class EtudiantController extends Controller
     /**
      * Enregistrer un nouvel etudiant.
      */
-    public function Creer(Request $request)
+    public function creer(Request $request)
     {
         $request->validate([
             'nom' => 'required|string|max:100',
@@ -51,7 +51,7 @@ class EtudiantController extends Controller
             'ville' => $request->ville,
         ]);
 
-        return redirect()->route('etudiant.profil', $etudiant->id)->withSuccess('Étudiant créé avec succès');
+        return redirect()->route('etudiant.profil', $etudiant->id)->with('succes','Étudiant créé avec succès');
     }
 
     /**
@@ -59,7 +59,8 @@ class EtudiantController extends Controller
      */
     public function profil(Etudiant $etudiant)
     {
-        return view('etudiant.show', ['etudiant' => $etudiant]);
+        $villes = Ville::all();
+        return view('etudiant.profil', ['etudiant' => $etudiant, 'villes' => $villes]);
     }
 
     /**
@@ -68,7 +69,7 @@ class EtudiantController extends Controller
     public function pageModifier(Etudiant $etudiant)
     {
         $villes = Ville::all();
-        return view('etudiant.edit', ['etudiant' => $etudiant, 'villes' => $villes]);
+        return view('etudiant.modifier', ['etudiant' => $etudiant, 'villes' => $villes]);
     }
 
     /**
@@ -94,7 +95,7 @@ class EtudiantController extends Controller
             'ville' => $request->ville,
         ]);
 
-        return redirect()->route('etudiant.profil', $etudiant->id)->withSuccess('Étudiant mis à jour avec succès');
+        return redirect()->route('etudiant.profil', $etudiant->id)->with('succes','Étudiant mis à jour avec succès');
     }
 
     /**
@@ -104,6 +105,6 @@ class EtudiantController extends Controller
     {
         $etudiant->delete();
 
-        return redirect()->route('etudiant.index')->withSuccess('Étudiant supprimé avec succès');
+        return redirect()->route('etudiant.listeEtuidants')->with('succes','Étudiant supprimé avec succès');
     }
 }

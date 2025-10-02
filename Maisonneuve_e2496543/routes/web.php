@@ -20,12 +20,12 @@ Route::get('/', [EtudiantController::class, 'listeEtuidants'])->name('etudiant.l
 
 Route::get('/etudiants', [EtudiantController::class, 'listeEtuidants'])->name('etudiant.listeEtuidants');
 
-Route::get('/etudiants/creer', [EtudiantController::class, 'pageCreation'])->name('etudiant.creer');
-Route::post('/etudiants', [EtudiantController::class, 'Creer'])->name('etudiant.store');
+Route::get('/etudiants/pageCreation', [EtudiantController::class, 'pageCreation'])->name('etudiant.pageCreation');
+Route::post('/etudiants/creer', [EtudiantController::class, 'creer'])->name('etudiant.creer');
 
-Route::get('/etudiants/{etudiant}', [EtudiantController::class, 'profil'])->name('etudiant.profil');
+Route::get('/etudiants/profil/{etudiant}', [EtudiantController::class, 'profil'])->name('etudiant.profil');
 
-Route::get('/etudiants/{etudiant}/modifier', [EtudiantController::class, 'pageModifier'])->name('etudiant.edit');
-Route::put('/etudiants/{etudiant}', [EtudiantController::class, 'modifier'])->name('etudiant.update');
+Route::get('/etudiants/pageModifier/{etudiant}', [EtudiantController::class, 'pageModifier'])->name('etudiant.pageModifier');
+Route::put('/etudiants/modifier/{etudiant}', [EtudiantController::class, 'modifier'])->name('etudiant.modifier');
 
-Route::delete('/etudiants/{etudiant}', [EtudiantController::class, 'supprimer'])->name('etudiant.supprimer');
+Route::delete('/etudiants/supprimer/{etudiant}', [EtudiantController::class, 'supprimer'])->name('etudiant.supprimer');

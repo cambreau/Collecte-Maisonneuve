@@ -32,7 +32,7 @@
 
         <div class="champ">
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" value="{{ old('email') }}">
+            <input type="email" id="email" name="email" value="{{ old('email') }}" required>
             @error('email')
                 <div class="erreur">{{ $message }}</div>
             @enderror
@@ -40,7 +40,7 @@
 
         <div class="champ">
             <label for="date_naissance">Date de naissance</label>
-            <input type="date" id="date_naissance" name="date_naissance" value="{{ old('date_naissance') }}">
+            <input type="date" id="date_naissance" name="date_naissance" value="{{ old('date_naissance') }}" required>
             @error('date_naissance')
                 <div class="erreur">{{ $message }}</div>
             @enderror
@@ -48,10 +48,10 @@
 
         <div class="champ">
             <label for="ville">Ville</label>
-            <select id="ville" name="ville">
+            <select id="ville" name="ville" required>
                 <option value="">-- Choisir une ville --</option>
                 @foreach($villes as $ville)
-                    <option value="{{ $ville->id }}" {{ old('ville') == $ville->id ? 'selected' : '' }}>{{ $ville->nom_ville ?? $ville->ville ?? ('Ville #' . $ville->id) }}</option>
+                    <option value="{{ $ville->id }}" {{ old('ville') == $ville->id ? 'selected' : '' }}>{{ $ville->ville }}</option>
                 @endforeach
             </select>
             @error('ville')

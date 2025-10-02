@@ -11,17 +11,24 @@
             <li><strong>Téléphone :</strong> {{ $etudiant->telephone }}</li>
             <li><strong>Adresse :</strong> {{ $etudiant->adresse }}</li>
             <li><strong>Date de naissance :</strong> {{ $etudiant->date_naissance }}</li>
-            <li><strong>Ville :</strong> {{ optional($etudiant->ville)->nom_ville ?? optional($etudiant->ville)->ville ?? '—' }}</li>
+            <li><strong>Ville :</strong>
+                @foreach($villes as $ville)
+                    @if($ville->id == $etudiant->ville)
+                        {{ $ville->ville }}
+                        @break
+                    @endif
+                @endforeach
+            </li>
         </ul>
     </div>
 
     <div class="actions">
-        <a href="{{ route('etudiant.pageModifier', $etudiant->id) }}" class="btn">Modifier</a>
+        <a href="{{ route('etudiant.pageModifier', $etudiant->id) }}" class="btn btn-secondaire">Modifier</a>
 
-        <form action="{{ route('etudiant.supprimer', $etudiant->id) }}" method="post" style="display:inline-block">
+        <form action="{{ route('etudiant.supprimer', $etudiant->id) }}" method="post" style="display:inline-block; margin-left: var(--rythme-serre);">
             @csrf
             @method('delete')
-            <button type="submit" class="btn btn-danger">Supprimer</button>
+            <button type="submit" class="btn btn-primaire" onclick="return confirm('Supprimer cet étudiant ?');">Supprimer</button>
         </form>
     </div>
 

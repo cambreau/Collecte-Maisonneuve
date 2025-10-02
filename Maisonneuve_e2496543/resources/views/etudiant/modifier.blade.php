@@ -52,7 +52,7 @@
             <select id="ville" name="ville">
                 <option value="">-- Choisir une ville --</option>
                 @foreach($villes as $ville)
-                    <option value="{{ $ville->id }}" {{ old('ville', $etudiant->ville) == $ville->id ? 'selected' : '' }}>{{ $ville->nom_ville ?? $ville->ville ?? ('Ville #' . $ville->id) }}</option>
+                    <option value="{{ $ville->id }}" {{ old('ville', $etudiant->ville) == $ville->id ? 'selected' : '' }}>{{ $ville->ville }}</option>
                 @endforeach
             </select>
             @error('ville')

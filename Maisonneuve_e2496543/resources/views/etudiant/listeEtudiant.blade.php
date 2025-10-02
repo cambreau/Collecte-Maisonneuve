@@ -12,11 +12,16 @@
                     <li><strong>Adresse :</strong> {{ $etudiant->adresse }}</li>
                     <li><strong>Date de naissance :</strong> {{ $etudiant->date_naissance }}</li>
                     <li><strong>Ville :</strong>
-                        {{ optional($etudiant->ville)->nom_ville ?? optional($etudiant->ville)->ville ?? '—' }}
+                        @foreach($villes as $ville)
+                            @if($ville->id == $etudiant->ville)
+                                {{ $ville->ville }}
+                                @break
+                            @endif
+                        @endforeach
                     </li>
                 </ul>
                 <div class="actions">
-                    <a class="btn btn-secondaire" href="{{ route('etudiant.edit', $etudiant->id) }}">Modifier</a>
+                    <a class="btn btn-secondaire" href="{{ route('etudiant.pageModifier', $etudiant->id) }}">Modifier</a>
                     <form action="{{ route('etudiant.supprimer', $etudiant->id) }}" method="post" style="display:inline-block; margin-left: var(--rythme-serre);">
                         @csrf
                         @method('delete')
