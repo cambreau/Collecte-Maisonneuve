@@ -1,0 +1,69 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--police-general);
+    background: var(--couleur-fond);
+    color: var(--couleur-texte);
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex-grow: 1;
+    margin: var(--rythme-espace) auto;
+    padding: 0 var(--rythme-base);
+}
+
+h1,
+h2,
+h3 {
+    margin-top: var(--rythme-base);
+    margin-bottom: var(--rythme-serre);
+    font-family: var(--police-general);
+    font-weight: var(--epaisseur-police-tres-gras);
+    line-height: var(--interligne-base);
+}
+
+h1 {
+    font-size: var(--taille-police-gros);
+    color: var(--logo-bleu-fonce);
+    line-height: var(--interligne-grand);
+}
+
+h2 {
+    font-size: var(--taille-police-grand);
+    color: var(--couleur-secondaire);
+    font-weight: var(--epaisseur-police-gras);
+}
+
+h3 {
+    font-size: var(--taille-police-moyen);
+    color: var(--couleur-texte);
+    font-weight: var(--epaisseur-police-normale);
+    line-height: var(--interligne-logo);
+}
+
+h1:hover {
+    color: var(--logo-bleu-clair);
+    font-weight: var(--epaisseur-police-tres-gras);
+}
+
+h2:hover {
+    color: var(--logo-bleu-moyen);
+    font-weight: var(--epaisseur-police-tres-gras);
+}
+
+h3:hover {
+    color: var(--logo-bleu-centre);
+    font-weight: var(--epaisseur-police-gras);
+}

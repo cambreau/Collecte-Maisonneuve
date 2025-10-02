@@ -1,0 +1,36 @@
+.formulaire input,
+.formulaire select,
+.formulaire textarea {
+    width: 100%;
+    padding: var(--rythme-serre) var(--rythme-base);
+    margin-bottom: var(--rythme-base);
+    border: 1px solid var(--couleur-bordure);
+    border-radius: 9999px; /* capsule */
+    font-size: var(--taille-police-normal);
+    font-family: var(--police-general);
+    outline: none;
+    transition: all 0.3s;
+    box-sizing: border-box;
+}
+
+/* Textarea spécifique : arrondi moins capsule */
+.formulaire textarea {
+    border-radius: var(--arrondi-grand);
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Focus */
+.formulaire input:focus,
+.formulaire select:focus,
+.formulaire textarea:focus {
+    border-color: var(--couleur-secondaire);
+    box-shadow: 0 0 5px var(--couleur-accent);
+}
+
+/* Placeholder */
+.formulaire input::placeholder,
+.formulaire textarea::placeholder {
+    color: #999;
+    font-style: italic;
+}

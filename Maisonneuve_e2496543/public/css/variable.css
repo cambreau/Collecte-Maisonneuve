@@ -1,0 +1,41 @@
+:root {
+    /* --- Espacement --- */
+    --rythme-tres-serre: 5px;
+    --rythme-serre: 10px;
+    --rythme-base: 20px;
+    --rythme-espace: 40px;
+    --rythme-tres-espace: 80px;
+
+    /* --- Couleurs --- */
+    --couleur-fond: #fffbf7;
+    --couleur-texte: #252b0c;
+    --couleur-principale: #143b74;
+    --couleur-secondaire: #437cc0;
+    --couleur-accent: #a8d4d9;
+    --couleur-bordure: #ccc;
+
+    /* --- Interligne --- */
+    --interligne-base: 1.5625em;
+    --interligne-grand: 2.5rem;
+    --interligne-logo: 1.78em;
+
+    /* --- Police --- */
+    --police-general: "Lora", sans-serif;
+    --police-decorative: "Lora", italic;
+
+    /* --- Taille de police --- */
+    --taille-police-petit: 0.9rem;
+    --taille-police-normal: 1rem;
+    --taille-police-moyen: 1.2rem;
+    --taille-police-grand: 1.8rem;
+    --taille-police-gros: 2rem;
+
+    /* --- Epaisseur de police --- */
+    --epaisseur-police-normale: 400;
+    --epaisseur-police-gras: 500;
+    --epaisseur-police-tres-gras: 700;
+
+    /* Border-radius */
+    --arrondi-petit: 4px;
+    --arrondi-grand: 8px;
+}

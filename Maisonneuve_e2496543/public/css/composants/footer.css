@@ -1,0 +1,17 @@
+.footer {
+    background: var(--couleur-principale);
+    color: white;
+    text-align: center;
+    padding: var(--rythme-base);
+    margin-top: var(--rythme-espace);
+}
+
+.footer a {
+    color: var(--couleur-accent);
+    text-decoration: none;
+    margin: 0 var(--rythme-serre);
+}
+
+.footer a:hover {
+    color: var(--couleur-secondaire);
+}

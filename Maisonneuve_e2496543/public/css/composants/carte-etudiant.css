@@ -1,0 +1,58 @@
+.carte-etudiants {
+    background-color: #fff;
+    padding: var(--rythme-base);
+    border-radius: var(--arrondi-grand);
+    margin-bottom: var(--rythme-base);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+    font-family: var(--police-general);
+    color: var(--couleur-texte);
+    border: 1px solid var(--couleur-bordure);
+}
+
+.carte-etudiants h2,
+.carte-etudiants h3 {
+    margin-bottom: var(--rythme-serre);
+    position: relative;
+}
+
+.carte-etudiants ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.carte-etudiants li {
+    padding: 6px 0;
+    border-bottom: 1px dashed var(--couleur-bordure);
+}
+
+.carte-etudiants li:last-child {
+    border-bottom: none;
+}
+
+/* Barre d'accent sous le titre */
+.carte-etudiants h2::after,
+.carte-etudiants h3::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 60px;
+    height: 4px;
+    border-radius: 4px;
+    background: linear-gradient(
+        90deg,
+        var(--couleur-secondaire),
+        var(--couleur-accent)
+    );
+}
+
+/* Effet lift au survol */
+.carte-etudiants {
+    transition: transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.carte-etudiants:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.15);
+}

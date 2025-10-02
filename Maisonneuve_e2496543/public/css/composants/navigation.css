@@ -1,0 +1,28 @@
+.navigation .navigation__menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    gap: var(--rythme-serre);
+}
+
+nav .navigation__menu .navigation__item {
+    margin-left: var(--rythme-base);
+}
+
+nav .navigation__menu .navigation__item a {
+    text-decoration: none;
+    color: white;
+    font-weight: var(--epaisseur-police-tres-gras);
+    padding: calc(var(--rythme-serre) - 2px) var(--rythme-base);
+    border-radius: 9999px;
+    background: var(--couleur-secondaire);
+    border: 2px solid transparent;
+    display: inline-block;
+    transition: none;
+}
+
+nav .navigation__menu .navigation__item a:hover {
+    background: var(--couleur-accent);
+    color: var(--couleur-texte);
+}

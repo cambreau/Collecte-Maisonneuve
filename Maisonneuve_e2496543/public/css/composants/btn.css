@@ -1,0 +1,30 @@
+.btn {
+    display: inline-block;
+    padding: var(--rythme-serre) var(--rythme-base);
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 9999px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.2s;
+}
+
+.btn-primaire {
+    background: var(--couleur-principale);
+    color: white;
+}
+
+.btn-primaire:hover {
+    background: var(--couleur-secondaire);
+}
+
+.btn-secondaire {
+    background: var(--couleur-accent);
+    color: var(--couleur-principale);
+}
+
+.btn-secondaire:hover {
+    background: var(--couleur-secondaire);
+    color: white;
+}

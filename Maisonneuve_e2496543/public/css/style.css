@@ -1,0 +1,10 @@
+@import url("variable.css");
+@import url("generale.css");
+
+@import url("composants/header.css");
+@import url("composants/navigation.css");
+@import url("composants/logo.css");
+@import url("composants/btn.css");
+@import url("composants/carte-etudiant.css");
+@import url("composants/footer.css");
+@import url("composants/formulaire.css");
