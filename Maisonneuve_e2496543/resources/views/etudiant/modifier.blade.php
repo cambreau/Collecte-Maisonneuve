@@ -32,14 +32,6 @@
         </div>
 
         <div class="champ">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" value="{{ old('email', $etudiant->email) }}">
-            @error('email')
-                <div class="erreur">{{ $message }}</div>
-            @enderror
-        </div>
-
-        <div class="champ">
             <label for="date_naissance">Date de naissance</label>
             <input type="date" id="date_naissance" name="date_naissance" value="{{ old('date_naissance', $etudiant->date_naissance) }}">
             @error('date_naissance')

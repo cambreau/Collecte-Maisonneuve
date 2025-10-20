@@ -16,8 +16,13 @@
         <h1>Zone Étudiante</h1>
         <nav class="navigation">
             <ul class="navigation__menu">
-                <li class="navigation__item"><a href="{{ route('etudiant.pageCreation') }}">Créer un étudiant</a></li>
-                <li class="navigation__item"><a href="{{ route('etudiant.listeEtuidants') }}">Liste Étudiants</a></li>
+                @auth
+                    <li class="navigation__item"><a href="{{ route('etudiant.profil', $etudiant->id) }}">Profil</a></li>
+                    <li class="navigation__item"><a href="{{ route('logout') }}">Déconnexion</a></li>
+                @endauth
+                @guest
+                    <li class="navigation__item"><a href="{{ route('login') }}">Connexion</a></li>
+                @endguest
             </ul>
         </nav>
     </header>
