@@ -51,7 +51,7 @@ class EtudiantController extends Controller
             'nom' => 'required|string|min:2|max:100',
             'adresse' => 'required|string|min:2|max:255',
             'telephone' => 'required|string|max:20',
-            'email' => 'required|email|max:255|unique:etudiants,email',
+             'email' => 'required|email|max:255|unique:users,email|unique:etudiants,email',
             'password' =>  [ 'required', 'confirmed', 'max:20',  Password::min(8) ->letters() ->mixedCase() ->numbers() ], 
             'date_naissance' => 'required|date',
             'ville' => 'required|exists:villes,id',

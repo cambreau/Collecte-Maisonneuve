@@ -5,17 +5,13 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\Ville;
 use App\Models\User;
+use App\Models\Etudiant;
+use Illuminate\Support\Facades\Hash;
 
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Etudiant>
- */
 class EtudiantFactory extends Factory
 {
-    /**
-     * Defini le model.
-     *
-     * @return array<string, mixed>
-     */
+    protected $model = Etudiant::class;
+
     public function definition()
     {
         return [
@@ -23,16 +19,9 @@ class EtudiantFactory extends Factory
             'adresse' => $this->faker->address,
             'telephone' => $this->faker->phoneNumber,
             'email' => $this->faker->unique()->safeEmail,
-            'date_naissance' => $this->faker->date(),
-            'ville' => Ville::inRandomOrder()->first()->id,
-    
-            // Crée un User lié à cet étudiant
-            'user_id' => User::factory()->create([
-                'name' => $this->faker->name,
-                'email' => $this->faker->unique()->safeEmail,
-                'password' => bcrypt('password'),
-            ])->id,
+            'date_naissance' => $this->faker->date('Y-m-d', '-18 years'),
+            'ville' => Ville::factory(),
+            'user_id' => User::factory(), // crée et associe un User automatiquement
         ];
     }
-    
 }
