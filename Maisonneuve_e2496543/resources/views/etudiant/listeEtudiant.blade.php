@@ -1,17 +1,17 @@
 @extends('layouts.app')
-@section('title', 'Liste des étudiants')
+@section('title', __('Student list'))
 @section('content')
-    <h2>Liste des étudiants</h2>
+    <h2>@lang('Student list')</h2>
     <div class="liste-etudiants">
         @forelse($etudiants as $etudiant)
             <div class="carte-etudiants">
                 <h3>{{ $etudiant->nom }}</h3>
                 <ul>
-                    <li><strong>Email :</strong> {{ $etudiant->email }}</li>
-                    <li><strong>Téléphone :</strong> {{ $etudiant->telephone }}</li>
-                    <li><strong>Adresse :</strong> {{ $etudiant->adresse }}</li>
-                    <li><strong>Date de naissance :</strong> {{ $etudiant->date_naissance }}</li>
-                    <li><strong>Ville :</strong>
+                    <li><strong>@lang('Email') :</strong> {{ $etudiant->email }}</li>
+                    <li><strong>@lang('Phone') :</strong> {{ $etudiant->telephone }}</li>
+                    <li><strong>@lang('Address') :</strong> {{ $etudiant->adresse }}</li>
+                    <li><strong>@lang('Birth date') :</strong> {{ $etudiant->date_naissance }}</li>
+                    <li><strong>@lang('City') :</strong>
                         @foreach($villes as $ville)
                             @if($ville->id == $etudiant->ville)
                                 {{ $ville->ville }}
@@ -21,16 +21,16 @@
                     </li>
                 </ul>
                 <div class="actions">
-                    <a class="btn btn-secondaire" href="{{ route('etudiant.pageModifier', $etudiant->id) }}">Modifier</a>
+                    <a class='btn btn-secondaire' href='{{ route('etudiant.pageModifier', $etudiant->id) }}'>@lang('Modify')</a>
                     <form action="{{ route('etudiant.supprimer', $etudiant->id) }}" method="post" style="display:inline-block; margin-left: var(--rythme-serre);">
                         @csrf
                         @method('delete')
-                        <button type="submit" class="btn btn-primaire" onclick="return confirm('Supprimer cet étudiant ?');">Supprimer</button>
+                        <button type='submit' class='btn btn-primaire'>@lang('Delete')</button>
                     </form>
                 </div>
             </div>
         @empty
-            <div class="alert">Aucun étudiant à afficher.</div>
+            <div class='alert'>@lang('No students to display.')</div>
         @endforelse
     </div>
 @endsection

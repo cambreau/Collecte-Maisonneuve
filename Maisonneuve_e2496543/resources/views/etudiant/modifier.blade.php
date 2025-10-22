@@ -1,14 +1,14 @@
 @extends('layouts.app')
-@section('title', 'Modifier étudiant')
+@section('title', __('Modify student'))
 @section('content')
-    <h2>Modifier l'étudiant</h2>
+    <h2>@lang('Modify student')</h2>
 
     <form class="formulaire" action="{{ route('etudiant.modifier', $etudiant->id) }}" method="post">
         @method('put')
         @csrf
 
         <div class="champ">
-            <label for="nom">Nom</label>
+            <label for='nom'>@lang('Name')</label>
             <input type="text" id="nom" name="nom" value="{{ old('nom', $etudiant->nom) }}">
             @error('nom')
                 <div class="erreur">{{ $message }}</div>
@@ -16,7 +16,7 @@
         </div>
 
         <div class="champ">
-            <label for="adresse">Adresse</label>
+            <label for='adresse'>@lang('Address')</label>
             <input type="text" id="adresse" name="adresse" value="{{ old('adresse', $etudiant->adresse) }}">
             @error('adresse')
                 <div class="erreur">{{ $message }}</div>
@@ -24,7 +24,7 @@
         </div>
 
         <div class="champ">
-            <label for="telephone">Téléphone</label>
+            <label for='telephone'>@lang('Phone')</label>
             <input type="text" id="telephone" name="telephone" value="{{ old('telephone', $etudiant->telephone) }}">
             @error('telephone')
                 <div class="erreur">{{ $message }}</div>
@@ -32,7 +32,7 @@
         </div>
 
         <div class="champ">
-            <label for="date_naissance">Date de naissance</label>
+            <label for='date_naissance'>@lang('Birth date')</label>
             <input type="date" id="date_naissance" name="date_naissance" value="{{ old('date_naissance', $etudiant->date_naissance) }}">
             @error('date_naissance')
                 <div class="erreur">{{ $message }}</div>
@@ -40,9 +40,9 @@
         </div>
 
         <div class="champ">
-            <label for="ville">Ville</label>
+            <label for='ville'>@lang('City')</label>
             <select id="ville" name="ville">
-                <option value="">-- Choisir une ville --</option>
+                <option value="">@lang('Choose a city')</option>
                 @foreach($villes as $ville)
                     <option value="{{ $ville->id }}" {{ old('ville', $etudiant->ville) == $ville->id ? 'selected' : '' }}>{{ $ville->ville }}</option>
                 @endforeach
@@ -52,7 +52,7 @@
             @enderror
         </div>
 
-        <button class="btn" type="submit">Enregistrer</button>
+        <button class='btn' type='submit'>@lang('Save')</button>
     </form>
 @endsection('content')
 

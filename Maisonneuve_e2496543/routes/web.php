@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EtudiantController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\SetLocaleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,3 +40,5 @@ Route::middleware('auth')->group(function () {
     Route::delete('/etudiants/supprimer/{etudiant}', [EtudiantController::class, 'supprimer'])->name('etudiant.supprimer');
 });
 
+// Langues
+Route::get('/lang/{locale}', [SetLocaleController::class, 'index'])->name('lang');

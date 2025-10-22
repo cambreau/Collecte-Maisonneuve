@@ -1,28 +1,32 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="{{ app()->getLocale() }}">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>@yield('title', 'Maisonneuve')</title>
+    <title>@yield('title', __('Maisonneuve'))</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 <body>
     <header>
         <picture class="logo">
             <a href="{{ url('/') }}">
-                <img src="{{ asset('images/logo.png') }}" alt="Maisonneuve">
+                <img src="{{ asset('images/logo.png') }}" alt="@lang('Maisonneuve')">
             </a>
         </picture>
-        <h1>Zone Étudiante</h1>
+        <h1>@lang('Student Zone')</h1>
         <nav class="navigation">
             <ul class="navigation__menu">
                 @auth
-                    <li class="navigation__item"><a href="{{ route('etudiant.profil', $etudiant->id) }}">Profil</a></li>
-                    <li class="navigation__item"><a href="{{ route('logout') }}">Déconnexion</a></li>
+                    <li class="navigation__item"><a href="{{ route('etudiant.profil', $etudiant->id) }}">@lang('Profile')</a></li>
+                    <li class="navigation__item"><a href="{{ route('logout') }}">@lang('Logout')</a></li>
                 @endauth
                 @guest
-                    <li class="navigation__item"><a href="{{ route('login') }}">Connexion</a></li>
+                    <li class="navigation__item"><a href="{{ route('login') }}">@lang('Login')</a></li>
                 @endguest
+            </ul>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" aria-current="true" href="{{ route('lang', 'en') }}">@lang('English')</a></li>
+                <li><a class="dropdown-item" href="{{ route('lang', 'fr') }}">@lang('French')</a></li>
             </ul>
         </nav>
     </header>
@@ -38,7 +42,7 @@
     </main>
 
     <footer class="footer">
-        <p>© 2025 Maisonneuve. Tous droits réservés.</p>
+        <p>© 2025 @lang('Maisonneuve'). @lang('All rights reserved').</p>
     </footer>
 </body>
 </html>
