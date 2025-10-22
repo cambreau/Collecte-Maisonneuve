@@ -1,0 +1,94 @@
+.carte-article {
+    background-color: var(--couleur-fond);
+    padding: var(--rythme-base);
+    border-radius: var(--arrondi-grand);
+    margin-bottom: var(--rythme-base);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+    font-family: var(--police-general);
+    color: var(--couleur-texte);
+    border: 1px solid var(--couleur-bordure);
+    transition: transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.carte-article:hover {
+    transform: translateY(calc(-1 * var(--rythme-tres-serre)));
+    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.15);
+}
+
+/* Titre de l'article */
+.carte-article h3 {
+    margin-bottom: var(--rythme-serre);
+    position: relative;
+    font-size: var(--taille-police-moyen);
+    font-weight: var(--epaisseur-police-gras);
+    color: var(--couleur-principale);
+    line-height: var(--interligne-base);
+}
+
+/* Barre d'accent sous le titre */
+.carte-article h3::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: calc(-1 * var(--rythme-tres-serre));
+    width: calc(var(--rythme-base) * 3);
+    height: var(--rythme-tres-serre);
+    border-radius: var(--arrondi-petit);
+    background: linear-gradient(
+        90deg,
+        var(--couleur-secondaire),
+        var(--couleur-accent)
+    );
+}
+
+/* Métadonnées de l'article (auteur et date) */
+.carte-article .meta-article {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--rythme-base);
+    padding: var(--rythme-serre) 0;
+    border-bottom: 1px dashed var(--couleur-bordure);
+    font-size: var(--taille-police-petit);
+    color: var(--couleur-texte);
+}
+
+.carte-article .meta-article .auteur {
+    font-weight: var(--epaisseur-police-gras);
+    color: var(--couleur-secondaire);
+}
+
+.carte-article .meta-article .date {
+    font-style: italic;
+}
+
+/* Contenu de l'article */
+.carte-article .contenu-article {
+    margin-bottom: var(--rythme-base);
+    line-height: var(--interligne-base);
+    text-align: justify;
+    color: var(--couleur-texte);
+}
+
+/* Actions (boutons) */
+.carte-article .actions {
+    display: flex;
+    gap: var(--rythme-serre);
+    justify-content: flex-end;
+    padding-top: var(--rythme-serre);
+    border-top: 1px dashed var(--couleur-bordure);
+}
+
+/* Responsive pour les métadonnées */
+@media (max-width: 768px) {
+    .carte-article .meta-article {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--rythme-serre);
+    }
+
+    .carte-article .actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}

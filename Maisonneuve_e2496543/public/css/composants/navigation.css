@@ -4,6 +4,9 @@
     margin: 0;
     padding: 0;
     gap: var(--rythme-serre);
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
 }
 
 nav .navigation__menu .navigation__item {
@@ -25,4 +28,16 @@ nav .navigation__menu .navigation__item a {
 nav .navigation__menu .navigation__item a:hover {
     background: var(--couleur-accent);
     color: var(--couleur-texte);
+}
+
+/* Conteneurs pour l'alignement */
+.nav-left {
+    display: flex;
+    gap: var(--rythme-serre);
+    align-items: center;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
 }

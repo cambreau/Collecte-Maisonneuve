@@ -30,5 +30,17 @@
     "Delete this student?": "Supprimer cet étudiant ?",
     "No students to display.": "Aucun étudiant à afficher.",
     "8 characters minimum": "8 caractères minimum",
-    "Enter your password": "Entrez votre mot de passe"
+    "Enter your password": "Entrez votre mot de passe",
+    "Article list": "Liste des articles",
+    "Create article": "Créer un article",
+    "Modify article": "Modifier l'article",
+    "Content": "Contenu",
+    "Author": "Auteur",
+    "Created at": "Créé le",
+    "No articles to display.": "Aucun article à afficher.",
+    "Title": "Titre",
+    "Enter English title": "Entrez le titre en anglais",
+    "Enter English content": "Entrez le contenu en anglais",
+    "Enter French title": "Entrez le titre en français",
+    "Enter French content": "Entrez le contenu en français"
 }
