@@ -79,6 +79,15 @@
     border-top: 1px dashed var(--couleur-bordure);
 }
 
+/* Actions pour la page d'articles */
+.actions-article {
+    margin-bottom: var(--rythme-base);
+}
+
+.formulaire-inline-article {
+    display: inline-block;
+}
+
 /* Responsive pour les métadonnées */
 @media (max-width: 768px) {
     .carte-article .meta-article {

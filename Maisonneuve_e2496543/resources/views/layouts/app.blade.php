@@ -14,30 +14,28 @@
             </a>
         </picture>
         <h1>@lang('Student Zone')</h1>
-        <nav class="navigation">
-            <ul class="navigation__menu">
-                <!-- Éléments de navigation à gauche -->
-                <div class="nav-left">
-                    <li class="navigation__item"><a href="{{ route('article.index') }}">@lang('Article list')</a></li>
-                    @auth
-                        <li class="navigation__item"><a href="{{ route('article.create') }}">@lang('Create article')</a></li>
+        @auth
+            <nav class="navigation">
+                <ul class="navigation__menu">
+                    <!-- Éléments de navigation à gauche -->
+                    <div class="nav-gauche">
+                        <li class="navigation__item"><a href="{{ route('article.index') }}">@lang('Article list')</a></li>
+                        <li class="navigation__item"><a href="{{ route('document.index') }}">@lang('Document')</a></li>
+                        <li class="navigation__item"><a href="{{ route('etudiant.listeEtuidants') }}">@lang('Student list')</a></li>
                         <li class="navigation__item"><a href="{{ route('etudiant.profil', Auth::user()->etudiant->id) }}">@lang('Profile')</a></li>
-                        <li class="navigation__item"><a href="{{ route('logout') }}">@lang('Logout')</a></li>
-                    @endauth
-                    @guest
-                        <li class="navigation__item"><a href="{{ route('login') }}">@lang('Login')</a></li>
-                    @endguest
-                </div>
-                
-                <!-- Dropdown des langues à droite -->
-                <div class="nav-right">
-                    <li class="navigation__item dropdown-menu">
-                        <a class="dropdown-item {{ app()->getLocale() == 'en' ? 'active' : '' }}" href="{{ route('lang', 'en') }}">EN</a>
-                        <a class="dropdown-item {{ app()->getLocale() == 'fr' ? 'active' : '' }}" href="{{ route('lang', 'fr') }}">FR</a>
-                    </li>
-                </div>
-            </ul>
-        </nav>
+                        <li class="navigation__item"><a href="{{ route('logout') }}" class="btn btn-danger">@lang('Logout')</a></li>
+                    </div>
+                    
+                    <!-- Dropdown des langues à droite -->
+                    <div class="nav-droite">
+                        <li class="navigation__item menu-deroulant">
+                            <a class="element-menu {{ app()->getLocale() == 'en' ? 'active' : '' }}" href="{{ route('lang', 'en') }}">EN</a>
+                            <a class="element-menu {{ app()->getLocale() == 'fr' ? 'active' : '' }}" href="{{ route('lang', 'fr') }}">FR</a>
+                        </li>
+                    </div>
+                </ul>
+            </nav>
+        @endauth
     </header>
 
     <main class="site-main container">

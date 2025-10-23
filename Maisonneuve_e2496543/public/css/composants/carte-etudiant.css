@@ -47,7 +47,7 @@
     );
 }
 
-/* Effet lift au survol */
+/* Effet d'élévation au survol */
 .carte-etudiants {
     transition: transform 0.15s ease, box-shadow 0.2s ease;
 }
@@ -55,4 +55,10 @@
 .carte-etudiants:hover {
     transform: translateY(-3px);
     box-shadow: 0 12px 26px rgba(0, 0, 0, 0.15);
+}
+
+/* Formulaires inline pour les étudiants */
+.formulaire-inline-etudiant {
+    display: inline-block;
+    margin-left: var(--rythme-serre);
 }

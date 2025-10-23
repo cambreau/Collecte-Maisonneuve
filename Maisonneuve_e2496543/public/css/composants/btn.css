@@ -28,3 +28,21 @@
     background: var(--couleur-secondaire);
     color: white;
 }
+
+.btn-danger {
+    background: var(--couleur-rouge);
+    color: white;
+}
+
+.btn-danger:hover {
+    background: var(--couleur-texte);
+}
+
+.btn-success {
+    background: var(--couleur-verte);
+    color: white;
+}
+
+.btn-success:hover {
+    background: var(--couleur-texte);
+}

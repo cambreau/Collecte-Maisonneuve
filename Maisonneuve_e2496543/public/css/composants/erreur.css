@@ -1,8 +1,8 @@
 .erreur {
     font-weight: var(--epaisseur-police-tres-gras);
-    color: #a72828;
-    background-color: #feecec;
-    border: 1px solid #feecec;
+    color: var(--couleur-rouge);
+    background-color: var(--couleur-fond);
+    border: 1px solid var(--couleur-rouge);
     border-radius: var(--arrondi-grand);
     padding: var(--rythme-serre) var(--rythme-base);
     margin-bottom: var(--rythme-base);

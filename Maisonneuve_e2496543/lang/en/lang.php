@@ -45,4 +45,13 @@ return [
     'Enter English content' => 'Enter English content',
     'Enter French title' => 'Enter French title',
     'Enter French content' => 'Enter French content',
+    'Download' => 'Download',
+    'Edit' => 'Edit',
+    'Document' => 'Document',
+    'Upload Document' => 'Upload Document',
+    'Type' => 'Type',
+    'Size' => 'Size',
+    'Date' => 'Date',
+    'Actions' => 'Actions',
+    'No documents available' => 'No documents available',
 ];

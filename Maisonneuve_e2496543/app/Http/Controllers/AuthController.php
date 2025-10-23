@@ -29,7 +29,7 @@ class AuthController extends Controller
 
         $credentials = $request->only('email', 'password');
         if(!Auth::validate($credentials)):
-            return redirect(route('login'))->withErrors(trans('auth.failed'))->withInput();
+            return redirect(route('login'))->withErrors(__('auth.failed'))->withInput();
         endif;
         $user = Auth::getProvider()->retrieveByCredentials($credentials);
         Auth::login($user);

@@ -31,13 +31,13 @@ nav .navigation__menu .navigation__item a:hover {
 }
 
 /* Conteneurs pour l'alignement */
-.nav-left {
+.nav-gauche {
     display: flex;
     gap: var(--rythme-serre);
     align-items: center;
 }
 
-.nav-right {
+.nav-droite {
     display: flex;
     align-items: center;
 }

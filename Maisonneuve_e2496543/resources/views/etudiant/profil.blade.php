@@ -25,7 +25,7 @@
     <div class="actions">
         <a href='{{ route('etudiant.pageModifier', $etudiant->id) }}' class='btn btn-secondaire'>@lang('Modify')</a>
 
-        <form action="{{ route('etudiant.supprimer', $etudiant->id) }}" method="post" style="display:inline-block; margin-left: var(--rythme-serre);">
+        <form action="{{ route('etudiant.supprimer', $etudiant->id) }}" method="post" class="formulaire-inline-etudiant">
             @csrf
             @method('delete')
             <button type='submit' class='btn btn-primaire'>@lang('Delete')</button>

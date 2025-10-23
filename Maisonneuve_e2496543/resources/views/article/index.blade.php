@@ -4,7 +4,7 @@
     <h2>@lang('Article list')</h2>
     
     @auth
-        <div class="actions" style="margin-bottom: var(--rythme-base);">
+        <div class="actions-article">
             <a href="{{ route('article.create') }}" class="btn btn-primaire">@lang('Create article')</a>
         </div>
     @endauth
@@ -27,7 +27,7 @@
                     @if(Auth::user()->etudiant && $article['etudiant_id'] == Auth::user()->etudiant->id)
                         <div class="actions">
                             <a class="btn btn-secondaire" href="{{ route('article.edit', $article['id']) }}">@lang('Modify')</a>
-                            <form action="{{ route('article.destroy', $article['id']) }}" method="post" style="display:inline-block;">
+                            <form action="{{ route('article.destroy', $article['id']) }}" method="post" class="formulaire-inline-article">
                                 @csrf
                                 @method('delete')
                                 <button type='submit' class='btn btn-primaire'>@lang('Delete')</button>

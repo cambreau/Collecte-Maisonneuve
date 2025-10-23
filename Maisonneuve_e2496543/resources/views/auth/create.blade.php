@@ -28,7 +28,7 @@
         <button class="btn btn-primaire" type="submit">@lang('Connect')</button>
     </form>
 
-    <p style="margin-top: var(--rythme-base);">@lang('No profile yet?')
-        <a class="btn btn-secondaire" href="{{ route('etudiant.pageCreation') }}" style="margin-left: var(--rythme-serre);">@lang('Create a student')</a>
+    <p class="lien-profil-connexion">@lang('No profile yet?')
+        <a class="btn btn-secondaire bouton-lien-connexion" href="{{ route('etudiant.pageCreation') }}">@lang('Create a student')</a>
     </p>
 @endsection

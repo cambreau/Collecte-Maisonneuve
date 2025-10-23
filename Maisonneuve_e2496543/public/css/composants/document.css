@@ -1,0 +1,102 @@
+/* Styles pour les documents */
+
+.actions-document {
+    margin-bottom: var(--rythme-base);
+}
+
+.conteneur-tableau-document {
+    background: var(--couleur-fond);
+    border-radius: var(--arrondi-grand);
+    border: 1px solid var(--couleur-bordure);
+    overflow: hidden;
+    margin-bottom: var(--rythme-base);
+}
+
+.tableau-document {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tableau-document thead {
+    background: var(--couleur-secondaire);
+    color: var(--couleur-fond);
+}
+
+.tableau-document th {
+    padding: var(--rythme-base);
+    text-align: left;
+    font-weight: var(--epaisseur-police-gras);
+    border-right: 1px solid var(--couleur-bordure);
+}
+
+.tableau-document th:last-child {
+    border-right: none;
+}
+
+.tableau-document td {
+    padding: var(--rythme-base);
+    border-bottom: 1px solid var(--couleur-bordure);
+    border-right: 1px solid var(--couleur-bordure);
+    vertical-align: middle;
+}
+
+.tableau-document td:last-child {
+    border-right: none;
+}
+
+.tableau-document tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Actions dans le tableau */
+.actions-tableau {
+    display: flex;
+    gap: var(--rythme-serre);
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.actions-tableau .btn {
+    margin: 0;
+}
+
+.actions-tableau form {
+    display: inline-block;
+    margin: 0;
+}
+
+/* Message vide */
+.message-vide {
+    text-align: center;
+    padding: var(--rythme-base);
+    color: var(--couleur-texte);
+    font-style: italic;
+}
+
+/* Actions de retour */
+.actions-retour {
+    margin-top: var(--rythme-base);
+}
+
+/* Pagination */
+.pagination-document {
+    display: flex;
+    justify-content: center;
+    margin-top: var(--rythme-base);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .conteneur-tableau-document {
+        overflow-x: auto;
+    }
+
+    .tableau-document {
+        min-width: var(--rythme-tres-espace);
+    }
+
+    .actions-tableau {
+        flex-direction: column;
+        gap: var(--rythme-serre);
+    }
+}

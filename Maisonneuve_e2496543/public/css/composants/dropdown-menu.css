@@ -1,5 +1,5 @@
-/* Dropdown intégré dans la navigation - Style distinctif */
-.navigation__item.dropdown-menu {
+/* Menu déroulant intégré dans la navigation - Style distinctif */
+.navigation__item.menu-deroulant {
     display: flex;
     background-color: var(--couleur-fond);
     border: 1px solid var(--couleur-bordure);
@@ -9,7 +9,7 @@
     margin-left: 0;
 }
 
-.navigation__item.dropdown-menu a.dropdown-item {
+.navigation__item.menu-deroulant a.element-menu {
     display: inline-block;
     padding: var(--rythme-tres-serre) var(--rythme-serre);
     color: var(--couleur-texte);
@@ -25,13 +25,13 @@
     position: relative;
 }
 
-.navigation__item.dropdown-menu a.dropdown-item:hover,
-.navigation__item.dropdown-menu a.dropdown-item:focus {
+.navigation__item.menu-deroulant a.element-menu:hover,
+.navigation__item.menu-deroulant a.element-menu:focus {
     color: var(--couleur-principale);
     background-color: var(--couleur-accent);
 }
 
-.navigation__item.dropdown-menu a.dropdown-item.active {
+.navigation__item.menu-deroulant a.element-menu.active {
     background-color: var(--couleur-principale);
     color: white;
     font-weight: var(--epaisseur-police-tres-gras);

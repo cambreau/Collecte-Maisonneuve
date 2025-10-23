@@ -1,0 +1,9 @@
+/* Styles pour la page de connexion */
+
+.lien-profil-connexion {
+    margin-top: var(--rythme-base);
+}
+
+.bouton-lien-connexion {
+    margin-left: var(--rythme-serre);
+}

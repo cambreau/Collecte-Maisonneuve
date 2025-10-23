@@ -39,10 +39,10 @@ class ArticleController extends Controller
             'titre_fr' => 'required_with:contenu_fr|nullable|min:3|max:255',
             'contenu_fr' => 'required_with:titre_fr',
         ],[], [
-        'titre_en' => trans('lang.article_titre_english'),
-        'contenu_en' => trans('lang.article_contenu_english'),
-        'titre_fr' => trans('lang.article_titre_french'),
-        'contenu_fr' => trans('lang.article_contenu_french')
+        'titre_en' => __('Enter English title'),
+        'contenu_en' => __('Enter English content'),
+        'titre_fr' => __('Enter French title'),
+        'contenu_fr' => __('Enter French content')
         ]);
        
         $titre = array_filter([
@@ -65,7 +65,7 @@ class ArticleController extends Controller
             'etudiant_id' => $etudiant_id
         ]);
 
-        return redirect()->route('article.index')->with('success', trans('lang.message_success_create_article'));
+        return redirect()->route('article.index')->with('success', __('Article created successfully'));
     }
 
     /**
@@ -82,7 +82,7 @@ class ArticleController extends Controller
     public function edit(Article $article)
     {   
         if ($article->etudiant_id !== Auth::user()->etudiant->id) {
-        return redirect()->route('article.index')->with('error', trans('lang.message_unauthorized_edit'));
+        return redirect()->route('article.index')->with('error', __('Unauthorized to edit this article'));
         }
 
         return view('article.edit', ['article' => $article]);
@@ -99,10 +99,10 @@ class ArticleController extends Controller
         'titre_fr' => 'required_with:contenu_fr|nullable|min:3|max:255',
         'contenu_fr' => 'required_with:titre_fr',
     ], [], [
-        'titre_en' => trans('lang.article_titre_english'),
-        'contenu_en' => trans('lang.article_contenu_english'),
-        'titre_fr' => trans('lang.article_titre_french'),
-        'contenu_fr' => trans('lang.article_contenu_french')
+        'titre_en' => __('Enter English title'),
+        'contenu_en' => __('Enter English content'),
+        'titre_fr' => __('Enter French title'),
+        'contenu_fr' => __('Enter French content')
     ]);
 
     $article->update([
@@ -117,7 +117,7 @@ class ArticleController extends Controller
     ]);
 
     return redirect()->route('article.index', $article)
-                     ->with('success', trans('lang.message_success_Article_updated'));
+                     ->with('success', __('Article updated successfully'));
     }
 
     /**
@@ -126,11 +126,11 @@ class ArticleController extends Controller
     public function destroy(Article $article)
     {   
         if ($article->etudiant_id !== Auth::user()->etudiant->id) {
-        return redirect()->route('article.index')->with('error', trans('lang.message_unauthorized_delete'));
+        return redirect()->route('article.index')->with('error', __('Unauthorized to delete this article'));
         }
 
         $article->delete();
 
-        return redirect()->route('article.index')->with('success', trans('lang.message_success_article_deleted'));
+        return redirect()->route('article.index')->with('success', __('Article deleted successfully'));
     }
 }

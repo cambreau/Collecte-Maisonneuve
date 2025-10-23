@@ -45,4 +45,13 @@ return [
     'Enter English content' => 'Entrez le contenu en anglais',
     'Enter French title' => 'Entrez le titre en français',
     'Enter French content' => 'Entrez le contenu en français',
+    'Download' => 'Télécharger',
+    'Edit' => 'Modifier',
+    'Document' => 'Document',
+    'Upload Document' => 'Téléverser un document',
+    'Type' => 'Type',
+    'Size' => 'Taille',
+    'Date' => 'Date',
+    'Actions' => 'Actions',
+    'No documents available' => 'Aucun document disponible',
 ];

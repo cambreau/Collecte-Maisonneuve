@@ -1,8 +1,8 @@
 .succes {
     font-weight: var(--epaisseur-police-tres-gras);
-    color: #28a745;
-    background-color: #d4edda;
-    border: 1px solid #c3e6cb;
+    color: var(--couleur-verte);
+    background-color: var(--couleur-accent);
+    border: 1px solid var(--couleur-verte);
     border-radius: var(--arrondi-grand);
     padding: var(--rythme-serre) var(--rythme-base);
     margin: var(--rythme-base) 0;
