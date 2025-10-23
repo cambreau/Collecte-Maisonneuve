@@ -65,7 +65,7 @@ class ArticleController extends Controller
             'etudiant_id' => $etudiant_id
         ]);
 
-        return redirect()->route('Article.index')->with('success', trans('lang.message_success_create_article'));
+        return redirect()->route('article.index')->with('success', trans('lang.message_success_create_article'));
     }
 
     /**

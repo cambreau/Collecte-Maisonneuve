@@ -25,7 +25,7 @@ class Article extends Model
         );
     }
 
-    protected function content(): Attribute
+    protected function contenu(): Attribute
     {
         return Attribute::make(
             get: fn($valeur) => json_decode($valeur, true),

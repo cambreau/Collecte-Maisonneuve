@@ -7,3 +7,15 @@
     padding: var(--rythme-serre) var(--rythme-base);
     margin-bottom: var(--rythme-base);
 }
+
+/* Supprimer les puces des listes d'erreurs */
+ul .erreur {
+    list-style: none;
+    margin-left: 0;
+}
+
+/* Alternative : supprimer complètement les puces de toutes les listes d'erreurs */
+ul:has(.erreur) {
+    list-style: none;
+    padding-left: 0;
+}

@@ -23,7 +23,7 @@ class AuthController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-        'email' => 'required|email|max:255|unique:users,email|unique:etudiants,email',
+        'email' => 'required|email|max:255',
         'password' => 'required|min:8|max:20'
         ]);
 

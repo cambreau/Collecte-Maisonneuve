@@ -24,7 +24,7 @@
                 </div>
                 
                 @auth
-                    @if($article['etudiant_id'] == Auth::user()->etudiant->id)
+                    @if(Auth::user()->etudiant && $article['etudiant_id'] == Auth::user()->etudiant->id)
                         <div class="actions">
                             <a class="btn btn-secondaire" href="{{ route('article.edit', $article['id']) }}">@lang('Modify')</a>
                             <form action="{{ route('article.destroy', $article['id']) }}" method="post" style="display:inline-block;">

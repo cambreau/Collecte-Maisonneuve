@@ -10,7 +10,7 @@
     <header>
         <picture class="logo">
             <a href="{{ url('/') }}">
-                <img src="{{ asset('images/logo.png') }}" alt="@lang('Maisonneuve')">
+                <img src="{{ asset('images/logo.jpg') }}" alt="@lang('Maisonneuve')">
             </a>
         </picture>
         <h1>@lang('Student Zone')</h1>
@@ -21,7 +21,7 @@
                     <li class="navigation__item"><a href="{{ route('article.index') }}">@lang('Article list')</a></li>
                     @auth
                         <li class="navigation__item"><a href="{{ route('article.create') }}">@lang('Create article')</a></li>
-                        <li class="navigation__item"><a href="{{ route('etudiant.profil', $etudiant->id) }}">@lang('Profile')</a></li>
+                        <li class="navigation__item"><a href="{{ route('etudiant.profil', Auth::user()->etudiant->id) }}">@lang('Profile')</a></li>
                         <li class="navigation__item"><a href="{{ route('logout') }}">@lang('Logout')</a></li>
                     @endauth
                     @guest
@@ -41,12 +41,6 @@
     </header>
 
     <main class="site-main container">
-        @if(session('succes'))
-            <div class="succes" role="alert">
-                 {{ session('succes')}}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        @endif
         @yield('content')
     </main>
 
