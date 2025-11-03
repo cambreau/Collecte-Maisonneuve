@@ -42,7 +42,7 @@ class AuthController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Supprime la session spécifiée du stockage.
      */
     public function destroy(Request $request)
     {

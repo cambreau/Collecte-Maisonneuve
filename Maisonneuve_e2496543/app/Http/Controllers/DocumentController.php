@@ -1,3 +1,18 @@
+<!-- References
+https://laravel.com/docs/10.x/pagination
+https://laravel.com/docs/10.x/validation#rule-file 
+https://laravel.com/docs/10.x/validation#rule-mimes
+https://laravel.com/docs/10.x/requests#retrieving-uploaded-files
+https://laravel.com/docs/10.x/filesystem#file-uploads
+https://laravel.com/docs/10.x/filesystem#file-existence
+https://laravel.com/docs/10.x/filesystem#the-public-disk
+https://laravel.com/docs/10.x/responses#file-downloads
+https://laravel.com/docs/10.x/helpers#method-storage-path
+https://laravel.com/docs/10.x/authorization#writing-policies
+https://www.php.net/time
+https://symfony.com/doc/current/components/http_foundation.html#managing-uploaded-files
+-->
+
 <?php
 
 namespace App\Http\Controllers;

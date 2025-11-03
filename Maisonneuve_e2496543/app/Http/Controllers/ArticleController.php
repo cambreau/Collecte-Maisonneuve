@@ -16,7 +16,7 @@ class ArticleController extends Controller
     public function index()
     {
         $articles = Article::articles();
-    return view('article.index',compact('articles'));
+        return view('article.index',compact('articles'));
     }
 
     /**
@@ -24,7 +24,6 @@ class ArticleController extends Controller
      */
     public function create()
     {   
-        
         return view('article.create');
     }
 
@@ -57,8 +56,6 @@ class ArticleController extends Controller
 
         $etudiant_id = Auth::user()->etudiant->id;
 
-        // dd($titre, $contenu, $etudiant_id);
-
         Article::create([
             'titre' => $titre,
             'contenu' => $contenu,
@@ -69,15 +66,7 @@ class ArticleController extends Controller
     }
 
     /**
-     * Afficher la ressource spécifiée.
-     */
-    public function show(Article $article)
-    {
-        //
-    }
-
-    /**
-     * Afficher le formulaire de modification de la ressource spécifiée.
+     * Afficher le formulaire de modification de l'article spécifié.
      */
     public function edit(Article $article)
     {   
@@ -89,7 +78,7 @@ class ArticleController extends Controller
     }
 
     /**
-     * Mettre à jour la ressource spécifiée dans le stockage.
+     * Mettre à jour l'article spécifié dans le stockage.
      */
     public function update(Request $request, Article $article)
     {
@@ -121,7 +110,7 @@ class ArticleController extends Controller
     }
 
     /**
-     * Supprimer la ressource spécifiée du stockage.
+     * Supprimer l'article spécifié du stockage.
      */
     public function destroy(Article $article)
     {   
