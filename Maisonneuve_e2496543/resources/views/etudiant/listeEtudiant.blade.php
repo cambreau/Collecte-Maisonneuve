@@ -20,6 +20,7 @@
                         @endforeach
                     </li>
                 </ul>
+                @if(Auth::check() && Auth::user()->etudiant && Auth::user()->etudiant->id == $etudiant->id)
                 <div class="actions">
                     <a class='btn btn-secondaire' href='{{ route('etudiant.pageModifier', $etudiant->id) }}'>@lang('Modify')</a>
                     <form action="{{ route('etudiant.supprimer', $etudiant->id) }}" method="post" class="formulaire-inline-etudiant">
@@ -28,6 +29,7 @@
                         <button type='submit' class='btn btn-primaire'>@lang('Delete')</button>
                     </form>
                 </div>
+                @endif
             </div>
         @empty
             <div class='alert'>@lang('No students to display.')</div>

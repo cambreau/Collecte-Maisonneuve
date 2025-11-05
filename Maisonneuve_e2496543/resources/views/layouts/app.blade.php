@@ -25,17 +25,21 @@
                         <li class="navigation__item"><a href="{{ route('etudiant.profil', Auth::user()->etudiant->id) }}">@lang('Profile')</a></li>
                         <li class="navigation__item"><a href="{{ route('logout') }}" class="btn btn-danger">@lang('Logout')</a></li>
                     </div>
-                    
-                    <!-- Dropdown des langues à droite -->
-                    <div class="nav-droite">
-                        <li class="navigation__item menu-deroulant">
-                            <a class="element-menu {{ app()->getLocale() == 'en' ? 'active' : '' }}" href="{{ route('lang', 'en') }}">EN</a>
-                            <a class="element-menu {{ app()->getLocale() == 'fr' ? 'active' : '' }}" href="{{ route('lang', 'fr') }}">FR</a>
-                        </li>
-                    </div>
                 </ul>
             </nav>
         @endauth
+        
+        <!-- Dropdown des langues  -->
+        <nav class="navigation">
+            <ul class="navigation__menu">
+                <div class="nav-droite">
+                    <li class="navigation__item menu-deroulant">
+                        <a class="element-menu {{ app()->getLocale() == 'en' ? 'active' : '' }}" href="{{ route('lang', 'en') }}">EN</a>
+                        <a class="element-menu {{ app()->getLocale() == 'fr' ? 'active' : '' }}" href="{{ route('lang', 'fr') }}">FR</a>
+                    </li>
+                </div>
+            </ul>
+        </nav>
     </header>
 
     <main class="site-main container">
